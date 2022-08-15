@@ -115,7 +115,6 @@ export class ModoEstudioComponent implements OnInit {
   ListaExamenesIncompletos(){
     this._ExamenService.ListaExamenesIncompletos().subscribe({
       next:(x)=>{
-        console.log(x)
         this.SimulacionesIncompletas=x;
         this.SimulacionesIncompletas.forEach((y:any)=>{
           if(y.idEstadoExamen!=3 && y.idSimuladorDevOpModo==1){

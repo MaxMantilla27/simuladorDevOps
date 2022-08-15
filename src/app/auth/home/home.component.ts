@@ -122,7 +122,6 @@ export class HomeComponent implements OnInit {
       next:(x)=>{
         if(x!=null){
           this.DominioResultado=x.dominioResultado;
-          console.log(this.DominioResultado)
         this.ResultadoDominio1=Math.floor(x.dominioResultado[0].desempenio);
         this.ResultadoDominio2=Math.floor(x.dominioResultado[1].desempenio);
         this.ResultadoDominio3=Math.floor(x.dominioResultado[2].desempenio);
@@ -130,13 +129,6 @@ export class HomeComponent implements OnInit {
         this.ResultadoDominio5=Math.floor(x.dominioResultado[4].desempenio);
         this.ResultadoDominio6=Math.floor(x.dominioResultado[5].desempenio);
         this.ResultadoDominio7=Math.floor(x.dominioResultado[6].desempenio);
-        console.log(this.ResultadoDominio1)
-        console.log(this.ResultadoDominio2)
-        console.log(this.ResultadoDominio3)
-        console.log(this.ResultadoDominio4)
-        console.log(this.ResultadoDominio5)
-        console.log(this.ResultadoDominio6)
-        console.log(this.ResultadoDominio7)
         this.Examen=x.examen;
         this.Puntos=Math.floor(x.examen.desempenio)
         }

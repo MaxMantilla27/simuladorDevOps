@@ -222,7 +222,6 @@ export class ModoExamenComponent implements OnInit {
   ObtenerPromedioIntento(){
     this._ExamenService.ObtenerPromedioIntento().subscribe({
       next:(x)=>{
-        console.log(x)
         if(x!=null){
           this.ExamenIntento=x
           this.ExamenIntento.forEach((y:any)=>{
