@@ -9,6 +9,7 @@ import { AvatarService } from 'src/app/shared/Services/Avatar/avatar.service';
 import { ExamenService } from 'src/app/shared/Services/Examen/examen.service';
 import { SessionStorageService } from 'src/app/shared/Services/session-storage.service';
 import { ResultadoExamenPorDominioDTO } from 'src/app/Models/DominioDTO';
+import { DominioService } from 'src/app/shared/Services/Dominio/dominio.service';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
     private _SessionStorageService:SessionStorageService,
     private _AvatarService:AvatarService,
     private _ExamenService:ExamenService,
+    private _DominioService:DominioService,
     private elementRef: ElementRef
   ) { }
   private signal$ = new Subject();
@@ -96,6 +98,7 @@ export class HomeComponent implements OnInit {
     dominio6:0,
     dominio7:0
   }
+  public Dominio:any;
 
   ngOnInit(): void {
 
@@ -105,6 +108,7 @@ export class HomeComponent implements OnInit {
       this.ObtenerNivelUsuario();
       this.ListaExamenesPorModo();
       this.ObtenerPromedioDominioPorModo();
+      this.ListaDominioCombo();
     }
   }
 
@@ -181,6 +185,13 @@ export class HomeComponent implements OnInit {
         if(x!=null){
           this.ResultadosPorDominio=x
         }
+      }
+    })
+  }
+  ListaDominioCombo(){
+    this._DominioService.ListaDominioCombo().subscribe({
+      next:(x)=>{
+        this.Dominio=x;
       }
     })
   }

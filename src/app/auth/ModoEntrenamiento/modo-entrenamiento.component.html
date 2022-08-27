@@ -15,33 +15,33 @@
 </div>
 <div class="container" style="width: 63%;">
   <div style="padding:0.75rem 1.25rem;display: flex;">
-    <div style="color:#fff;display: flex;justify-content: center;">
-      <div class="card CardsEstudio" style="border-radius:20px;">
-        <div class="card-header" style="border-radius: 20px 20px 0px 0px; border-bottom: 1px solid #fff; background: #0C9AFE">
+    <div  class="row" style="color:#fff;justify-content: center;">
+      <div class="card CardsEstudio col-12 col-md-4" style="border-radius:20px;">
+        <div class="card-header row" style="border-radius: 20px 20px 0px 0px; border-bottom: 1px solid #fff; background: #0C9AFE">
             <div class="text-center" style="padding: 0px 12px;"><b class="card-title">Número de simulaciones totales</b></div>
         </div>
-        <div class="card-body" style="border-radius: 0px 0px 20px 20px; background: #0C9AFE">
+        <div class="card-body row" style="border-radius: 0px 0px 20px 20px; background: #0C9AFE">
           <div class="text-center"><b style="font-size:60px;">{{SimulacionesTotales}}</b></div>
         </div>
     </div>
-    <div class="card CardsEstudio" style="border-radius:20px;">
-        <div class="card-header" style="border-radius: 20px 20px 0px 0px; border-bottom: 1px solid #fff; background: #0C9AFE">
+    <div class="card CardsEstudio col-12 col-md-4" style="border-radius:20px;">
+        <div class="card-header row" style="border-radius: 20px 20px 0px 0px; border-bottom: 1px solid #fff; background: #0C9AFE">
             <div class="text-center">
                 <b class="card-title">Número de simulaciones inconclusas</b>
             </div>
         </div>
-        <div class="card-body" style="border-radius: 0px 0px 20px 20px; background: #0C9AFE">
+        <div class="card-body row" style="border-radius: 0px 0px 20px 20px; background: #0C9AFE">
           <div class="text-center"><b style="font-size:60px;">{{SimulacionesInconclusas}}</b></div>
 
         </div>
     </div>
-    <div class="card CardsEstudio" style="border-radius:20px;">
-        <div class="card-header" style="border-radius: 20px 20px 0px 0px; border-bottom: 1px solid #fff; background: #0C9AFE">
+    <div class="card CardsEstudio col-12 col-md-4" style="border-radius:20px;">
+        <div class="card-header row" style="border-radius: 20px 20px 0px 0px; border-bottom: 1px solid #fff; background: #0C9AFE">
             <div class="text-center" style="padding: 12px 0px;">
                 <b class="card-title">Tiempo de estudio total</b>
             </div>
         </div>
-        <div class="card-body" style="border-radius: 0px 0px 20px 20px; background: #0C9AFE">
+        <div class="card-body row" style="border-radius: 0px 0px 20px 20px; background: #0C9AFE">
             <div class="text-center"><b style="font-size:60px;">{{HoraMostrar}}:{{MinutoMostrar}}</b></div>
             <div class="text-center"><span class="card-text">hh/mm</span></div>
         </div>
@@ -68,6 +68,94 @@
       </div>
     </div>
   </div>
+  <div *ngIf="ResultadosPorDominio!=undefined" class="titulo" style="font-weight: 400 !important;">
+    Mejor puntaje por habilidad
+    <br>
+    <div class="row" style="margin-bottom: 10px">
+      <div class="col-12 col-md-3">
+        <div style="display: flex;justify-content: center;margin-left: -25px;">
+          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio1"></app-dona-puntos>
+        </div>
+        <div class="subtitulo">
+          Habilidad 1:
+        </div>
+        <div style="font-size: 13px">
+          Desarrollar una estrategia de instrumentación.
+        </div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div style="display: flex;justify-content: center;margin-left: -25px;">
+          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio2"></app-dona-puntos>
+        </div>
+        <div class="subtitulo">
+          Habilidad 2:
+        </div>
+        <div style="font-size: 13px">
+          Desarrollar una estrategia de ingeniería de confiabilidad del sitio (SRE).
+        </div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div style="display: flex;justify-content: center;margin-left: -25px;">
+          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio3"></app-dona-puntos>
+        </div>
+        <div class="subtitulo">
+          Habilidad 3:
+        </div>
+        <div style="font-size: 13px">
+          Desarrollar un plan de seguridad y cumplimiento.
+        </div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div style="display: flex;justify-content: center;margin-left: -25px;">
+          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio4"></app-dona-puntos>
+        </div>
+        <div class="subtitulo">
+          Habilidad 4:
+        </div>
+        <div style="font-size: 13px">
+          Administrar control de fuente.
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div style="display: flex;justify-content: center;margin-left: -25px;">
+          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio5"></app-dona-puntos>
+        </div>
+        <div class="subtitulo">
+          Habilidad 5:
+        </div>
+        <div style="font-size: 13px">
+          Facilitar la comunicación y la colaboración.
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div style="display: flex;justify-content: center;margin-left: -25px;">
+          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio6"></app-dona-puntos>
+        </div>
+        <div class="subtitulo">
+          Habilidad 6:
+        </div>
+        <div style="font-size: 13px">
+          Definir e implementar la integración continua.
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div style="display: flex;justify-content: center;margin-left: -25px;">
+          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio7"></app-dona-puntos>
+        </div>
+        <div class="subtitulo">
+          Habilidad 7:
+        </div>
+        <div style="font-size: 13px">
+          Definir e implementar una estrategia de gestión de release y entrega continua.
+        </div>
+      </div>
+    </div>
+    <div class="card" *ngIf="Promedio>=70" style="margin-bottom: 10px; font-size: 13px;color:#706E81 ;background-color: #FFFDEE;border-radius: 5px;">
+      Tu puntaje está dentro de lo requerido para aprobar el modo entrenamiento. Conseguiste más del 70% de puntaje en el modo entrenamiento del Microsoft Certified: DevOps Engineer Expert AZ - 400.
+    </div>
+  </div>
 
 
   <!-- Crear simulación de estudio -->
@@ -90,7 +178,7 @@
             <div class="col-md-12" style="margin-top: 10px ">
               <div class="subtitulo">Nombre de la simulación:</div>
               <mat-form-field appearance="outline" [floatLabel]="'always'" style="width: 100%;">
-                <input type="text" placeholder="Escriba el nombre de la simulacion" formControlName="NombreSimulacion" matInput />
+                <input type="text" placeholder="Escriba el nombre de la simulación" formControlName="NombreSimulacion" matInput />
                 <mat-error *ngIf="userForm.invalid">Debe ingresar un nombre para la simulación</mat-error>
               </mat-form-field>
               </div>
@@ -211,7 +299,7 @@
     <div class="card-body" style="border-radius: 0px 0px 20px 20px;padding-top:0px;padding-bottom:0px; ">
     </div>
   </div>
-
+<br>
 </div>
 
 
