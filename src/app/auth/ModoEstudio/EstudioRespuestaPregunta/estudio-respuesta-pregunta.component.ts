@@ -31,7 +31,9 @@ export class EstudioRespuestaPreguntaComponent implements OnInit {
   public CantidadTotalPreguntas=0;
   public ContadorPreguntaActual=0;
   public ContadorPregunta=0;
-  public NombreDominio=''
+  public NombreDominio='';
+  public NombreExamen=''
+
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -48,6 +50,7 @@ export class EstudioRespuestaPreguntaComponent implements OnInit {
         this.CantidadTotalPreguntas=x.length;
         this.ContadorPreguntaActual=this.ContadorPregunta+1;
         this.NombreDominio=x[0].dominioNombre;
+        this.NombreExamen=x[0].nombreExamen;
       }
     })
   }
