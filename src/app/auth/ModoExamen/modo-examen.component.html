@@ -67,101 +67,23 @@
         </div>
       </div>
     </div>
-    <div *ngIf="ResultadosPorDominio!=undefined" class="titulo" style="font-weight: 400 !important;margin-bottom: 10px;">
-      <div class="row">
+    <div *ngIf="ResultadosPorDominio!=undefined">
+      <div class="row titulo" style="font-weight: 400 !important;margin-bottom: 10px;">
+      <ng-container *ngFor="let itemDominios of ResultadosPorDominio" >
         <div class="col-12 col-md-3">
           <div style="display: flex;justify-content: center;">
-          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio1"></app-dona-puntos>
-        </div>
+            <app-dona-puntos [Puntos]="itemDominios.promedio"></app-dona-puntos>
+          </div>
         <div class="item-leyenda-dona">
           <div class="subtitulo">
-            Habilidad 1:
+            Habilidad {{itemDominios.id}}:
           </div>
           <div style="font-size: 14px">
-            Desarrollar una estrategia de instrumentación.
+            {{itemDominios.nombre}}
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-3">
-        <div style="display: flex;justify-content: center;">
-          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio2"></app-dona-puntos>
-        </div>
-        <div class="item-leyenda-dona">
-          <div class="subtitulo">
-            Habilidad 2:
           </div>
-          <div style="font-size: 14px">
-            Desarrollar una estrategia de ingeniería de confiabilidad del sitio (SRE).
           </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-3">
-        <div style="display: flex;justify-content: center;">
-          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio3"></app-dona-puntos>
-        </div>
-        <div class="item-leyenda-dona">
-          <div class="subtitulo">
-          Habilidad 3:
-          </div>
-          <div style="font-size: 14px">
-            Desarrollar un plan de seguridad y cumplimiento.
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-3">
-        <div style="display: flex;justify-content: center;">
-          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio4"></app-dona-puntos>
-        </div>
-        <div class="item-leyenda-dona">
-          <div class="subtitulo">
-            Habilidad 4:
-          </div>
-          <div style="font-size: 14px">
-            Administrar control de fuente.
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-4">
-        <div style="display: flex;justify-content: center;">
-          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio5"></app-dona-puntos>
-        </div>
-        <div class="item-leyenda-dona">
-          <div class="subtitulo">
-            Habilidad 5:
-          </div>
-          <div style="font-size: 14px">
-            Facilitar la comunicación y la colaboración.
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div style="display: flex;justify-content: center;">
-          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio6"></app-dona-puntos>
-        </div>
-        <div class="item-leyenda-dona">
-          <div class="subtitulo">
-            Habilidad 6:
-          </div>
-          <div style="font-size: 14px">
-            Definir e implementar la integración continua.
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div style="display: flex;justify-content: center;">
-          <app-dona-puntos [Puntos]="ResultadosPorDominio.dominio7"></app-dona-puntos>
-        </div>
-        <div class="item-leyenda-dona">
-          <div class="subtitulo">
-            Habilidad 7:
-          </div>
-          <div style="font-size: 14px">
-            Definir e implementar una estrategia de gestión de release y entrega continua.
-          </div>
-        </div>
-      </div>
+      </ng-container>
       </div>
     </div>
     <div style="padding-top: 20px; padding-bottom: 20px; border-top: 1px solid #cececf ">
