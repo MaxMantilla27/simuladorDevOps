@@ -1,9 +1,9 @@
-<div style="background: #F2F5FA; " >
+<div style="background: #F2F5FA;">
   <div class="container">
     <div class="row rowcont" >
       <div class="col-12 col-sm-12 col-md-12 logo-container">
           <div>
-              <img class="logo-simulador" src={{listaConfiguracion.logo}}/>
+              <img class="logo-simulador" src="../../../assets/imagenes/logotipo-MC-DevOps-Tento.svg"/>
           </div>
       </div>
       <div class="container" style="display: flex;justify-content: center;">
@@ -25,7 +25,7 @@
                     <div style="width:11%">
                       <div class="iconim" style="background-image: url('/assets/iconos/message-06.svg');"></div>
                     </div>
-                    <div style="width:89%;text-align: left;" class="fieldOld">
+                    <div style="width:89%;text-align: left;">
                       <mat-form-field style="width: 100%" appearance="outline" [floatLabel]="'always'">
                          <input type="text" placeholder="Email" formControlName="Email" matInput />
                          <mat-error style="font-size: 10px;" *ngIf="userForm.invalid">El campo Email electrónico es requerido.</mat-error>
@@ -36,7 +36,7 @@
                     <div style="width:11%">
                        <div class="iconim" style="background-image: url('/assets/iconos/padlock-05.svg');"></div>
                     </div>
-                    <div style="width:89%;text-align: left;" class="fieldOld">
+                    <div style="width:89%;text-align: left;">
                       <mat-form-field style="width: 100%" appearance="outline" [floatLabel]="'always'">
                          <input type="password" placeholder="Password" formControlName="Password" matInput />
                          <mat-error style="font-size: 10px;" *ngIf="userForm.invalid">El campo Contraseña es obligatorio.</mat-error>
